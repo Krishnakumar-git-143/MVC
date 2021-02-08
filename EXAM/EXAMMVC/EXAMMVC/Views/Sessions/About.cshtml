@@ -1,0 +1,11 @@
+﻿
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "About";
+
+    var name = HttpContextAccessor.HttpContext.Session.GetString("Name");
+
+}
+<h1>krishna</h1>
+@name

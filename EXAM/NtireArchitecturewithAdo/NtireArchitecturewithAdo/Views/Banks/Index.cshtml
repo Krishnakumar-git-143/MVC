@@ -1,0 +1,47 @@
+﻿@model IEnumerable<NtireArchitecturewithAdo.Models.Banks>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BankId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BankName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BankAddress)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BankId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BankName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BankAddress)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BankId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BankId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BankId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
